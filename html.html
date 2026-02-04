@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio — Monteur Vidéo</title>
+  <meta name="description" content="Monteur vidéo YouTube & Reels. Showreel, projets, services et contact." />
+  <style>
+    :root { --bg:#0b0d12; --card:#121524; --txt:#e9ecf1; --muted:#aab2c0; --acc:#7c5cff; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--txt); }
+    a{ color:inherit; text-decoration:none; }
+    .wrap{ max-width:1100px; margin:0 auto; padding:28px 18px 80px; }
+    header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    .brand{ font-weight:800; letter-spacing:.2px; }
+    nav a{ margin-left:14px; color:var(--muted); font-weight:600; }
+    nav a:hover{ color:var(--txt); }
+    .hero{ margin-top:40px; display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:center; }
+    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    h1{ margin:0 0 10px; font-size:42px; line-height:1.05; }
+    p{ margin:0; color:var(--muted); line-height:1.55; }
+    .cta{ margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
+    .btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); font-weight:800; }
+    .btn.primary{ background:var(--acc); border-color:transparent; color:#0b0d12; }
+    .kpi{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
+    .pill{ padding:8px 10px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.22); color:#dcd6ff; font-weight:700; font-size:13px; }
+    .section{ margin-top:26px; }
+    .section h2{ margin:0 0 12px; font-size:22px; }
+    .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
+    .thumb{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); }
+    .thumb .ph{ aspect-ratio:16/9; background:linear-gradient(135deg, rgba(124,92,255,.35), rgba(255,255,255,.06)); }
+    .thumb .meta{ padding:12px; }
+    .thumb .t{ font-weight:900; margin:0 0 4px; }
+    .thumb .d{ margin:0; font-size:13px; color:var(--muted); }
+    .two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+    .list{ display:grid; gap:10px; }
+    .item{ padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
+    .item b{ display:block; margin-bottom:4px; }
+    .footer{ margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
+    iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:14px; }
+    @media (max-width: 900px){
+      .hero{ grid-template-columns:1fr; }
+      .grid{ grid-template-columns:repeat(2,1fr); }
+      h1{ font-size:34px; }
+    }
+    @media (max-width: 560px){
+      .grid{ grid-template-columns:1fr; }
+      nav{ display:none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Livai — Monteur Vidéo</div>
+      <nav>
+        <a href="#showreel">Showreel</a>
+        <a href="#projets">Projets</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="card">
+        <h1>Monteur vidéo<br/>YouTube & Reels</h1>
+        <p>Montage orienté rétention : hooks rapides, rythme, sound design, titraille et sous-titres dynamiques. Objectif : une vidéo qui se regarde jusqu’au bout.</p>
+        <div class="cta">
+          <a class="btn primary" href="#showreel">Voir le showreel</a>
+          <a class="btn" href="#contact">Me contacter</a>
+        </div>
+        <div class="kpi">
+          <span class="pill">Premiere Pro</span>
+          <span class="pill">After Effects</span>
+          <span class="pill">Shorts / Reels</span>
+          <span class="pill">YouTube long format</span>
+        </div>
+      </div>
+
+      <div class="card" id="showreel">
+        <!-- Remplace le src par ton lien YouTube/Vimeo embed -->
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+          title="Showreel"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <section class="section" id="projets">
+      <h2>Projets</h2>
+      <div class="grid">
+        <a class="thumb" href="#">
+          <div class="ph"></div>
+          <div class="meta">
+            <p class="t">Projet 1 — Reels</p>
+            <p class="d">Hook + sous-titres dynamiques + sound design</p>
+          </div>
+        </a>
+        <a class="thumb" href="#">
+          <div class="ph"></div>
+          <div class="meta">
+            <p class="t">Projet 2 — YouTube</p>
+            <p class="d">Storytelling + rythme + transitions propres</p>
+          </div>
+        </a>
+        <a class="thumb" href="#">
+          <div class="ph"></div>
+          <div class="meta">
+            <p class="t">Projet 3 — Finance</p>
+            <p class="d">B-roll + motion simple + titraille</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Études de cas</h2>
+      <div class="two">
+        <div class="card">
+          <b>Cas 1 — Objectif : rétention</b>
+          <p>Avant : intro trop longue. Action : hook dès 0:02, cuts plus courts, SFX, sous-titres. Résultat : meilleure dynamique (ajoute tes chiffres si dispo).</p>
+        </div>
+        <div class="card">
+          <b>Cas 2 — Objectif : clarté</b>
+          <p>Avant : message confus. Action : structure en 3 actes, titres écran, b-roll contextualisé. Résultat : compréhension + engagement.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="services">
+      <h2>Services</h2>
+      <div class="list">
+        <div class="item"><b>Montage Reels / TikTok / Shorts</b><p>Montage rapide, sous-titres, SFX, rythme et punchlines.</p></div>
+        <div class="item"><b>Montage YouTube long format</b><p>Storytelling, structure, cuts, sound design, habillage.</p></div>
+        <div class="item"><b>Motion léger</b><p>Titres animés, pictos, zoom, transitions propres.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <h2>Contact</h2>
+      <div class="card">
+        <p><b>Email :</b> tonmail@email.com</p>
+        <p style="margin-top:6px;"><b>Disponibilité :</b> réponse sous 24–48h</p>
+        <div class="cta" style="margin-top:14px;">
+          <a class="btn primary" href="mailto:tonmail@email.com">M’écrire</a>
+          <a class="btn" href="#">Instagram</a>
+          <a class="btn" href="#">TikTok</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">
+      <span>© <span id="y"></span> TonNom</span>
+      <span>Montage vidéo • France</span>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
