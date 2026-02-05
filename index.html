@@ -98,6 +98,17 @@
     .list{ display:grid; gap:10px; }
     .item{ padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
     .item b{ display:block; margin-bottom:4px; }
+    .item .icon{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      width:20px;
+      height:20px;
+      margin-right:8px;
+      border-radius:6px;
+      vertical-align:middle;
+    }
+    .item .icon svg{ display:block; }
     .footer{ margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
     iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:14px; }
     .showreel-video{
@@ -282,9 +293,31 @@
     <section class="section" id="services">
       <h2>Services</h2>
       <div class="list">
-        <div class="item"><b>Montage Reels / TikTok / Shorts</b><p>Montage rapide, sous-titres, SFX, rythme et punchlines.</p></div>
-        <div class="item"><b>Montage YouTube long format</b><p>Storytelling, structure, cuts, sound design, habillage.</p></div>
-        <div class="item"><b>Motion léger</b><p>Titres animés, pictos, zoom, transitions propres.</p></div>
+        <div class="item">
+          <b>
+            <span class="icon" aria-hidden="true" title="TikTok">
+              <svg width="16" height="16" viewBox="0 0 24 24" role="img" focusable="false">
+                <path fill="#25F4EE" d="M14 3c.4 2.7 2.2 4.7 4.9 4.9v3.1c-1.9-.1-3.6-.7-4.9-1.8v5.6c0 3.4-2.8 6.2-6.2 6.2S1.6 18.3 1.6 14.9c0-3.4 2.8-6.2 6.2-6.2.5 0 1 .1 1.5.2v3.3c-.5-.2-1-.4-1.5-.4-1.6 0-2.9 1.3-2.9 2.9S6.2 17.6 7.8 17.6s2.9-1.3 2.9-2.9V3h3.3z"/>
+                <path fill="#FE2C55" d="M14 3c.3 2.1 1.5 3.7 3.5 4.5v2.8c-1.6-.1-3.1-.6-4.4-1.5v5.6c0 3.2-2.6 5.8-5.8 5.8S1.5 17.6 1.5 14.4c0-3.2 2.6-5.8 5.8-5.8.4 0 .8 0 1.2.1v2.8c-.4-.2-.8-.2-1.2-.2-1.6 0-2.9 1.3-2.9 2.9 0 1.6 1.3 2.9 2.9 2.9 1.6 0 2.9-1.3 2.9-2.9V3h3.8z"/>
+              </svg>
+            </span>
+            Montage Reels / TikTok / Shorts
+          </b>
+          <p>Montage rapide, sous-titres, SFX, rythme et punchlines.</p>
+        </div>
+        <div class="item">
+          <b>
+            <span class="icon" aria-hidden="true" title="YouTube">
+              <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
+                <path fill="#FF0000" d="M23 7.2c-.3-1.1-1.2-2-2.3-2.3C18.9 4.4 12 4.4 12 4.4s-6.9 0-8.7.5C2.2 5.2 1.3 6.1 1 7.2.5 9 .5 12 .5 12s0 3 .5 4.8c.3 1.1 1.2 2 2.3 2.3 1.8.5 8.7.5 8.7.5s6.9 0 8.7-.5c1.1-.3 2-1.2 2.3-2.3.5-1.8.5-4.8.5-4.8s0-3-.5-4.8z"/>
+                <path fill="#fff" d="M10 15.5v-7l6 3.5-6 3.5z"/>
+              </svg>
+            </span>
+            Montage YouTube long format
+          </b>
+          <p>Storytelling, structure, cuts, sound design, habillage.</p>
+        </div>
+        <div class="item"><b>Motion léger ??</b><p>Titres animés, pictos, zoom, transitions propres.</p></div>
       </div>
     </section>
 
