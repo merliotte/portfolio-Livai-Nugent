@@ -143,42 +143,50 @@
       </div>
 
       <div class="card" id="showreel">
-        <!-- Remplace le src par ton lien YouTube/Vimeo embed -->
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/VIDEO_ID"
+        <!-- Vidéo showreel en boucle -->
+        <video
           title="Showreel"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen>
-        </iframe>
+          style="width:100%; aspect-ratio:16/9; border:0; border-radius:14px; object-fit:cover;"
+          autoplay
+          muted
+          loop
+          controls>
+          <source src="video/Pokémon Or et Argent_ L'Histoire d'un Jeu Légendaire.mp4" type="video/mp4">
+          Votre navigateur ne supporte pas la lecture vidéo.
+        </video>
       </div>
     </section>
 
     <section class="section" id="projets">
       <h2>Projets</h2>
       <div class="grid">
-        <a class="thumb" href="#">
-          <div class="ph"></div>
+        <div class="thumb">
+          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+            <source src="video/Derush Rodolphe.mp4" type="video/mp4">
+          </video>
           <div class="meta">
             <p class="t">Projet 1 — Reels</p>
             <p class="d">Hook + sous-titres dynamiques + sound design</p>
           </div>
-        </a>
-        <a class="thumb" href="#">
-          <div class="ph"></div>
+        </div>
+        <div class="thumb">
+          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+            <source src="video/Exercice Application-Overlay_Sound Effect_Text_Footage.mp4" type="video/mp4">
+          </video>
           <div class="meta">
             <p class="t">Projet 2 — YouTube</p>
             <p class="d">Storytelling + rythme + transitions propres</p>
           </div>
-        </a>
-        <a class="thumb" href="#">
-          <div class="ph"></div>
+        </div>
+        <div class="thumb">
+          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
+            <source src="video/L'histoire folle de Pokémon Or et Argent.mp4" type="video/mp4">
+          </video>
           <div class="meta">
             <p class="t">Projet 3 — Finance</p>
             <p class="d">B-roll + motion simple + titraille</p>
           </div>
-        </a>
+        </div>
       </div>
     </section>
 

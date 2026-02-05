@@ -12,3 +12,9 @@ AppData/
 *.swp
 # Ignore VSCode settings
 .vscode/
+# Ignore large video files
+video/
+*.mp4
+*.mov
+*.avi
+*.mkv
