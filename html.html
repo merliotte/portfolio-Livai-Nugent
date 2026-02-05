@@ -5,18 +5,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Portfolio — Monteur Vidéo</title>
   <meta name="description" content="Monteur vidéo YouTube & Reels. Showreel, projets, services et contact." />
+  <link rel="icon" type="image/png" href="LN_pixel_logo_transparent_512.png" sizes="32x32" />
   <style>
     :root { --bg:#0b0d12; --card:#121524; --txt:#e9ecf1; --muted:#aab2c0; --acc:#7c5cff; }
     *{ box-sizing:border-box; }
     body{ margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--txt); }
     a{ color:inherit; text-decoration:none; }
     .wrap{ max-width:1100px; margin:0 auto; padding:28px 18px 80px; }
-    header{ display:flex; justify-content:space-between; align-items:center; gap:12px; }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,13,18,0.72);
+      transition: backdrop-filter 0.25s, background 0.25s;
+      backdrop-filter: none;
+    }
+    header.scrolled {
+      backdrop-filter: blur(8px);
+      background: rgba(11,13,18,0.82);
+      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
+    }
     .brand{ font-weight:800; letter-spacing:.2px; }
-    nav a{ margin-left:14px; color:var(--muted); font-weight:600; }
-    nav a:hover{ color:var(--txt); }
+    nav a{
+      margin-left:14px;
+      color:var(--muted);
+      font-weight:600;
+      transition: color 0.18s, transform 0.18s cubic-bezier(.4,1.6,.4,1);
+    }
+    nav a:hover, nav a:focus-visible {
+      color:var(--txt);
+      transform:scale(1.11);
+      z-index:1;
+    }
     .hero{ margin-top:40px; display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:center; }
-    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25); }
+    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); }
     h1{ margin:0 0 10px; font-size:42px; line-height:1.05; }
     p{ margin:0; color:var(--muted); line-height:1.55; }
     .cta{ margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
@@ -27,7 +53,8 @@
     .section{ margin-top:26px; }
     .section h2{ margin:0 0 12px; font-size:22px; }
     .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
-    .thumb{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); }
+    .thumb{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); cursor:pointer; }
+    .thumb:hover, .thumb:focus-visible { transform:scale(1.045); box-shadow:0 6px 24px rgba(124,92,255,.10); z-index:2; }
     .thumb .ph{ aspect-ratio:16/9; background:linear-gradient(135deg, rgba(124,92,255,.35), rgba(255,255,255,.06)); }
     .thumb .meta{ padding:12px; }
     .thumb .t{ font-weight:900; margin:0 0 4px; }
@@ -38,22 +65,48 @@
     .item b{ display:block; margin-bottom:4px; }
     .footer{ margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
     iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:14px; }
-    @media (max-width: 900px){
-      .hero{ grid-template-columns:1fr; }
-      .grid{ grid-template-columns:repeat(2,1fr); }
-      h1{ font-size:34px; }
+    .brand-logo {
+      height: 38px;
+      width: 38px;
+      min-width: 32px;
+      min-height: 32px;
+      object-fit: contain;
+      display: inline-block;
+      margin-right: 10px;
+      border-radius: 8px;
+      background: #18142a;
+      box-shadow: 0 2px 8px rgba(124,92,255,0.10);
+    }
+    /* Effet de brillance accentué sur le header et les h2 */
+    header, header .brand, header nav a {
+      text-shadow: 0 4px 18px rgba(124,92,255,0.38), 0 2px 8px rgba(255,255,255,0.18), 0 1px 0 rgba(255,255,255,0.18);
+    }
+    h2 {
+      text-shadow: 0 6px 28px rgba(124,92,255,0.45), 0 2px 8px rgba(255,255,255,0.18), 0 1px 0 rgba(255,255,255,0.18);
     }
     @media (max-width: 560px){
       .grid{ grid-template-columns:1fr; }
       nav{ display:none; }
+      .brand-logo { height: 28px; width: 28px; margin-right: 7px; }
+    }
+    .section, .hero, .footer {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(.4,1.6,.4,1), transform 0.7s cubic-bezier(.4,1.6,.4,1);
+    }
+    .section.visible, .hero.visible, .footer.visible {
+      opacity: 1;
+      transform: none;
     }
   </style>
 </head>
 <body>
   <div class="wrap">
     <header>
-      <div class="brand">Livai — Monteur Vidéo</div>
-      <nav>
+      <div class="brand" style="display:flex;align-items:center;gap:18px;">
+        <img src="ln-logo.png" alt="Logo LN" class="brand-logo" style="height:60px;width:60px;"> LN Monteur Vidéo
+      </div>
+      <nav style="display:flex;align-items:center;gap:10px;">
         <a href="#showreel">Showreel</a>
         <a href="#projets">Projets</a>
         <a href="#services">Services</a>
@@ -70,8 +123,20 @@
           <a class="btn" href="#contact">Me contacter</a>
         </div>
         <div class="kpi">
-          <span class="pill">Premiere Pro</span>
-          <span class="pill">After Effects</span>
+          <span class="pill">
+            <svg width="18" height="18" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:4px;">
+              <rect width="32" height="32" rx="7" fill="#2A003F"/>
+              <text x="7" y="23" font-size="15" font-family="Arial Black,Arial,sans-serif" fill="#E5AFFF">Pr</text>
+            </svg>
+            Premiere Pro
+          </span>
+          <span class="pill">
+            <svg width="18" height="18" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:4px;">
+              <rect width="32" height="32" rx="7" fill="#00102A"/>
+              <text x="7" y="23" font-size="15" font-family="Arial Black,Arial,sans-serif" fill="#00E1FF">Ae</text>
+            </svg>
+            After Effects
+          </span>
           <span class="pill">Shorts / Reels</span>
           <span class="pill">YouTube long format</span>
         </div>
@@ -154,13 +219,33 @@
     </section>
 
     <div class="footer">
-      <span>© <span id="y"></span> TonNom</span>
+      <span>© <span id="y"></span> <img src="ln-logo.png" alt="Logo LN" class="brand-logo" style="height:22px;width:22px;vertical-align:middle;margin-right:4px;"> Livai Nugent</span>
       <span>Montage vidéo • France</span>
     </div>
   </div>
 
   <script>
     document.getElementById("y").textContent = new Date().getFullYear();
+    // Effet flou sur le header au scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 10) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    // Apparition des sections au scroll
+    function revealOnScroll() {
+      document.querySelectorAll('.section, .hero, .footer').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 60) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('DOMContentLoaded', revealOnScroll);
   </script>
 </body>
 </html>
