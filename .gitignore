@@ -13,8 +13,10 @@ AppData/
 # Ignore VSCode settings
 .vscode/
 # Ignore large video files
-video/
+video/*
 *.mp4
 *.mov
 *.avi
 *.mkv
+# Keep lightweight loop previews
+!video/*-loop10s.mp4
