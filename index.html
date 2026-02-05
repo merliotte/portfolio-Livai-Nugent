@@ -125,6 +125,24 @@
     .tag-avant{ color:#8b93a7; font-size:0.95em; }
     .tag-action{ color:#eaff57; text-shadow:0 0 10px rgba(234,255,87,0.55); font-size:1.05em; }
     .tag-resultat{ color:#44ff9a; text-shadow:0 0 12px rgba(68,255,154,0.55); letter-spacing:0.2px; font-size:1.15em; }
+    .tag-card{
+      margin-top:14px;
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      background:linear-gradient(135deg, rgba(124,92,255,.18), rgba(68,255,154,.12));
+      border:1px solid rgba(255,255,255,.08);
+      text-align:center;
+    }
+    .tag-card .tag-avant,
+    .tag-card .tag-action,
+    .tag-card .tag-resultat{
+      background:rgba(0,0,0,.25);
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+    }
     .two .card b,
     .two .card p{
       text-align:center;
@@ -146,6 +164,7 @@
       font-family: "Georgia", "Times New Roman", serif;
       font-weight: 700;
       letter-spacing: 0.2px;
+      opacity: 0.75;
     }
     .camera-glow-path{
       filter: drop-shadow(0 0 6px rgba(124,92,255,0.55)) drop-shadow(0 0 12px rgba(124,92,255,0.35));
@@ -340,9 +359,10 @@
             <span class="word-glow">Rétention</span>
           </b>
           <p>
-            <span class="tag-avant">Avant</span> : intro trop longue<br/>
-            <span class="tag-action">Action</span> : hook dès 0:02, cuts plus courts, SFX, sous-titres<br/>
-            <span class="tag-resultat">Résultat</span> : meilleure dynamique et engagement
+            Intro trop longue<br/>
+            Hook dès 0:02, cuts plus courts, SFX, sous-titres<br/>
+            Meilleure dynamique et engagement
+          </p>
         </div>
         <div class="card">
           <b>
@@ -355,11 +375,16 @@
             <span class="word-glow">Clarté</span>
           </b>
           <p>
-            <span class="tag-avant">Avant</span> : message confus<br/>
-            <span class="tag-action">Action</span> : structure en 3 actes, titres écran, b-roll contextualisé<br/>
-            <span class="tag-resultat">Résultat</span> : compréhension + engagement
+            Message confus<br/>
+            Structure en 3 actes, titres écran, b-roll contextualisé<br/>
+            Compréhension + engagement
           </p>
         </div>
+      </div>
+      <div class="card tag-card">
+        <span class="tag-avant">Avant</span>
+        <span class="tag-action">Action</span>
+        <span class="tag-resultat">Résultat</span>
       </div>
     </section>
 
