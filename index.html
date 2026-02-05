@@ -17,6 +17,7 @@
       justify-content: space-between;
       align-items: center;
       gap: 12px;
+      flex-wrap: wrap;
       position: sticky;
       top: 0;
       z-index: 100;
@@ -29,7 +30,7 @@
       background: rgba(11,13,18,0.82);
       box-shadow: 0 2px 16px rgba(0,0,0,0.10);
     }
-    .brand{ font-weight:800; letter-spacing:.2px; }
+    .brand{ font-weight:800; letter-spacing:.2px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
     nav a{
       margin-left:14px;
       color:var(--muted);
@@ -41,17 +42,51 @@
       transform:scale(1.11);
       z-index:1;
     }
+    .nav-toggle{
+      display:none;
+      background:transparent;
+      color:var(--txt);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 10px;
+      border-radius:10px;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .nav-toggle span{
+      display:block;
+      width:22px;
+      height:2px;
+      background:currentColor;
+      margin:4px 0;
+      border-radius:2px;
+    }
+    .mobile-nav{
+      display:none;
+      width:100%;
+      gap:10px;
+      padding:10px 0 6px;
+      border-top:1px solid rgba(255,255,255,.08);
+    }
+    .mobile-nav a{
+      display:block;
+      padding:8px 0;
+      color:var(--muted);
+      font-weight:700;
+    }
+    .mobile-nav a:hover, .mobile-nav a:focus-visible{
+      color:var(--txt);
+    }
     .hero{ margin-top:40px; display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:center; }
     .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); }
-    h1{ margin:0 0 10px; font-size:42px; line-height:1.05; }
-    p{ margin:0; color:var(--muted); line-height:1.55; }
+    h1{ margin:0 0 10px; font-size:clamp(28px, 4.2vw, 46px); line-height:1.05; }
+    p{ margin:0; color:var(--muted); line-height:1.55; font-size:clamp(14px, 1.5vw, 16px); }
     .cta{ margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
     .btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); font-weight:800; }
     .btn.primary{ background:var(--acc); border-color:transparent; color:#0b0d12; }
     .kpi{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
-    .pill{ padding:8px 10px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.22); color:#dcd6ff; font-weight:700; font-size:13px; }
+    .pill{ padding:8px 10px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.22); color:#dcd6ff; font-weight:700; font-size:clamp(12px, 1.2vw, 13px); }
     .section{ margin-top:26px; }
-    .section h2{ margin:0 0 12px; font-size:22px; }
+    .section h2{ margin:0 0 12px; font-size:clamp(18px, 2.6vw, 24px); }
     .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
     .thumb{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); cursor:pointer; }
     .thumb:hover, .thumb:focus-visible { transform:scale(1.045); box-shadow:0 6px 24px rgba(124,92,255,.10); z-index:2; }
@@ -65,6 +100,15 @@
     .item b{ display:block; margin-bottom:4px; }
     .footer{ margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
     iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:14px; }
+    .showreel-video{
+      width:100%;
+      aspect-ratio:16/9;
+      border:0;
+      border-radius:14px;
+      object-fit:cover;
+      display:block;
+      transition: aspect-ratio 0.35s ease, max-height 0.35s ease;
+    }
     .brand-logo {
       height: 38px;
       width: 38px;
@@ -84,10 +128,30 @@
     h2 {
       text-shadow: 0 6px 28px rgba(124,92,255,0.45), 0 2px 8px rgba(255,255,255,0.18), 0 1px 0 rgba(255,255,255,0.18);
     }
-    @media (max-width: 560px){
+    @media (max-width: 1024px){
+      .hero{ grid-template-columns:1fr; }
+      .card{ padding:16px; }
+    }
+    @media (max-width: 900px){
+      .grid{ grid-template-columns:repeat(2, 1fr); }
+      .two{ grid-template-columns:1fr; }
+      header{ gap:10px; }
+      nav a{ margin-left:10px; }
+    }
+    @media (max-width: 768px){
+      .showreel-video{
+        aspect-ratio:9/16;
+        max-height:60vh;
+      }
+    }
+    @media (max-width: 640px){
+      .wrap{ padding:22px 14px 64px; }
       .grid{ grid-template-columns:1fr; }
       nav{ display:none; }
+      .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
+      .mobile-nav.open{ display:grid; }
       .brand-logo { height: 28px; width: 28px; margin-right: 7px; }
+      .footer{ flex-direction:column; align-items:flex-start; }
     }
     .section, .hero, .footer {
       opacity: 0;
@@ -112,6 +176,17 @@
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div id="mobile-nav" class="mobile-nav" role="menu" aria-label="Navigation mobile">
+        <a href="#showreel">Showreel</a>
+        <a href="#projets">Projets</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
     </header>
 
     <section class="hero">
@@ -146,7 +221,7 @@
         <!-- Vidéo showreel en boucle -->
         <video
           title="Showreel"
-          style="width:100%; aspect-ratio:16/9; border:0; border-radius:14px; object-fit:cover;"
+          class="showreel-video"
           autoplay
           muted
           loop
@@ -254,6 +329,21 @@
     }
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
+    // Menu mobile
+    const navToggle = document.querySelector('.nav-toggle');
+    const mobileNav = document.getElementById('mobile-nav');
+    if (navToggle && mobileNav) {
+      navToggle.addEventListener('click', () => {
+        const isOpen = mobileNav.classList.toggle('open');
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+      mobileNav.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          navToggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
   </script>
 </body>
 </html>
