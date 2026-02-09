@@ -306,7 +306,7 @@
           muted
           loop
           controls>
-          <source src="video/V1_Harry_Reel-loop10s.mp4" type="video/mp4">
+          <source src="video/pokemon-or-et-argent-histoire-jeu-legendaire-loop10s.mp4" type="video/mp4">
           Votre navigateur ne supporte pas la lecture vidéo.
         </video>
       </div>
@@ -317,7 +317,7 @@
       <div class="grid">
         <div class="thumb">
           <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
-            <source src="video/V1_Harry_Reel-loop10s.mp4" type="video/mp4">
+            <source src="video/V1_Harry_Reel-loops.mp4" type="video/mp4">
           </video>
           <div class="meta">
             <p class="t">Reels</p>
@@ -432,10 +432,10 @@
     <section class="section" id="contact">
       <h2>Contact</h2>
       <div class="card">
-        <p><b>Email :</b> tonmail@email.com</p>
+        <p><b>Email :</b> livainugent@hotmail.fr</p>
         <p style="margin-top:6px;"><b>Disponibilité :</b> réponse sous 24–48h</p>
         <div class="cta" style="margin-top:14px;">
-          <a class="btn primary" href="mailto:tonmail@email.com">M’écrire</a>
+          <a class="btn primary" href="mailto:livainugent@hotmail.fr">M’écrire</a>
           <a class="btn" href="#">Instagram</a>
           <a class="btn" href="#">TikTok</a>
         </div>
@@ -485,18 +485,6 @@
         });
       });
     }
-    // Activer l'audio uniquement après interaction utilisateur
-    document.querySelectorAll('video').forEach(video => {
-      video.addEventListener('click', () => {
-        if (video.muted) {
-          video.muted = false;
-          video.volume = 1;
-          video.play().catch(() => {});
-        } else {
-          video.muted = true;
-        }
-      });
-    });
   </script>
 </body>
 </html>
