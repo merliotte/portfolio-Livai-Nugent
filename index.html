@@ -3,474 +3,223 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio — Monteur Vidéo</title>
-  <meta name="description" content="Monteur vidéo YouTube & Reels. Showreel, projets, services et contact." />
+  <title>Portfolio 2026 | Livai Nugent | Monteur vidéo</title>
+  <meta name="description" content="Monteur vidéo pour YouTube, Reels, Shorts et publicités. Showreel, projets, méthode, services et contact." />
   <link rel="icon" type="image/png" href="LN_pixel_logo_transparent_512.png" sizes="32x32" />
-  <style>
-    :root { --bg:#0b0d12; --card:#121524; --txt:#e9ecf1; --muted:#aab2c0; --acc:#7c5cff; }
-    *{ box-sizing:border-box; }
-    body{ margin:0; font-family:system-ui, -apple-system, Segoe UI, Roboto, Arial; background:var(--bg); color:var(--txt); }
-    a{ color:inherit; text-decoration:none; }
-    .wrap{ max-width:1100px; margin:0 auto; padding:28px 18px 80px; }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      flex-wrap: wrap;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(11,13,18,0.72);
-      transition: backdrop-filter 0.25s, background 0.25s;
-      backdrop-filter: none;
-    }
-    header.scrolled {
-      backdrop-filter: blur(8px);
-      background: rgba(11,13,18,0.82);
-      box-shadow: 0 2px 16px rgba(0,0,0,0.10);
-    }
-    .brand{ font-weight:800; letter-spacing:.2px; display:flex; align-items:center; gap:14px; flex-wrap:wrap; }
-    nav a{
-      margin-left:14px;
-      color:var(--muted);
-      font-weight:600;
-      transition: color 0.18s, transform 0.18s cubic-bezier(.4,1.6,.4,1);
-    }
-    nav a:hover, nav a:focus-visible {
-      color:var(--txt);
-      transform:scale(1.11);
-      z-index:1;
-    }
-    .nav-toggle{
-      display:none;
-      background:transparent;
-      color:var(--txt);
-      border:1px solid rgba(255,255,255,.18);
-      padding:8px 10px;
-      border-radius:10px;
-      font-weight:800;
-      cursor:pointer;
-    }
-    .nav-toggle span{
-      display:block;
-      width:22px;
-      height:2px;
-      background:currentColor;
-      margin:4px 0;
-      border-radius:2px;
-    }
-    .mobile-nav{
-      display:none;
-      width:100%;
-      gap:10px;
-      padding:10px 0 6px;
-      border-top:1px solid rgba(255,255,255,.08);
-    }
-    .mobile-nav a{
-      display:block;
-      padding:8px 0;
-      color:var(--muted);
-      font-weight:700;
-    }
-    .mobile-nav a:hover, .mobile-nav a:focus-visible{
-      color:var(--txt);
-    }
-    .hero{ margin-top:40px; display:grid; grid-template-columns:1.1fr .9fr; gap:18px; align-items:stretch; }
-    .card{ background:var(--card); border:1px solid rgba(255,255,255,.06); border-radius:18px; padding:18px; box-shadow:0 10px 28px rgba(0,0,0,.25); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); }
-    h1{ margin:0 0 10px; font-size:clamp(28px, 4.2vw, 46px); line-height:1.05; }
-    p{ margin:0; color:var(--muted); line-height:1.55; font-size:clamp(14px, 1.5vw, 16px); }
-    .cta{ margin-top:16px; display:flex; gap:10px; flex-wrap:wrap; }
-    .btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.12); font-weight:800; transition: transform 0.18s cubic-bezier(.4,1.6,.4,1), box-shadow 0.18s ease; }
-    .btn:hover, .btn:focus-visible{
-      transform: scale(1.04);
-      box-shadow: 0 6px 18px rgba(124,92,255,0.22);
-    }
-    .btn.primary{ background:var(--acc); border-color:transparent; color:#0b0d12; }
-    .kpi{ margin-top:14px; display:flex; gap:10px; flex-wrap:wrap; }
-    .pill{ padding:8px 10px; border-radius:999px; background:rgba(124,92,255,.14); border:1px solid rgba(124,92,255,.22); color:#dcd6ff; font-weight:700; font-size:clamp(12px, 1.2vw, 13px); }
-    .section{ margin-top:26px; }
-    .section h2{ margin:0 0 12px; font-size:clamp(18px, 2.6vw, 24px); }
-    .grid{ display:grid; grid-template-columns:repeat(3, 1fr); gap:12px; }
-    .thumb{ border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,.08); transition:transform 0.22s cubic-bezier(.4,1.6,.4,1); cursor:pointer; }
-    .thumb:hover, .thumb:focus-visible { transform:scale(1.045); box-shadow:0 6px 24px rgba(124,92,255,.10); z-index:2; }
-    .thumb .ph{ aspect-ratio:16/9; background:linear-gradient(135deg, rgba(124,92,255,.35), rgba(255,255,255,.06)); }
-    .thumb .meta{ padding:12px; }
-    .thumb .t{ font-weight:900; margin:0 0 4px; }
-    .thumb .d{ margin:0; font-size:13px; color:var(--muted); }
-    .two{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-    .list{ display:grid; gap:10px; }
-    .item{ padding:12px; border-radius:14px; border:1px solid rgba(255,255,255,.08); background:rgba(255,255,255,.03); }
-    .item b{ display:block; margin-bottom:4px; }
-    .item .icon{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:20px;
-      height:20px;
-      margin-right:8px;
-      border-radius:6px;
-      vertical-align:middle;
-    }
-    .item .icon svg{ display:block; }
-    h1 .icon{
-      width:0.75em;
-      height:0.75em;
-      margin-right:8px;
-    }
-    h1 .icon svg{
-      width:100%;
-      height:100%;
-    }
-    .tag-avant{ color:#8b93a7; font-size:0.95em; }
-    .tag-action{ color:#eaff57; text-shadow:0 0 10px rgba(234,255,87,0.55); font-size:1.05em; }
-    .tag-resultat{ color:#44ff9a; text-shadow:0 0 12px rgba(68,255,154,0.55); letter-spacing:0.2px; font-size:1.15em; }
-    .tag-card{
-      margin-top:14px;
-      display:flex;
-      justify-content:center;
-      gap:16px;
-      flex-wrap:wrap;
-      background:linear-gradient(135deg, rgba(124,92,255,.18), rgba(68,255,154,.12));
-      border:1px solid rgba(255,255,255,.08);
-      text-align:center;
-    }
-    .tag-card .tag-avant,
-    .tag-card .tag-action,
-    .tag-card .tag-resultat{
-      background:rgba(0,0,0,.25);
-      padding:6px 10px;
-      border-radius:999px;
-      border:1px solid rgba(255,255,255,.12);
-    }
-    .two .card b,
-    .two .card p{
-      text-align:center;
-    }
-    .word-glow{
-      color:#f2f6ff;
-      text-shadow:
-        0 1px 0 rgba(255,255,255,0.35),
-        0 2px 6px rgba(124,92,255,0.45),
-        0 6px 16px rgba(124,92,255,0.35);
-      display:block;
-      margin-top:4px;
-    }
-    .word-underline{
-      text-decoration: underline;
-      text-decoration-thickness: 2px;
-      text-decoration-color: rgba(124,92,255,0.6);
-      text-underline-offset: 3px;
-      font-family: "Georgia", "Times New Roman", serif;
-      font-weight: 700;
-      letter-spacing: 0.2px;
-      opacity: 0.75;
-    }
-    .camera-glow-path{
-      filter: drop-shadow(0 0 6px rgba(124,92,255,0.55)) drop-shadow(0 0 12px rgba(124,92,255,0.35));
-    }
-    .footer{ margin-top:34px; display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; color:var(--muted); }
-    iframe{ width:100%; aspect-ratio:16/9; border:0; border-radius:14px; }
-    .showreel-video{
-      width:100%;
-      aspect-ratio:16/9;
-      border:0;
-      border-radius:14px;
-      object-fit:cover;
-      display:block;
-      transition: aspect-ratio 0.35s ease, max-height 0.35s ease;
-    }
-    .showreel-card{
-      display:flex;
-    }
-    .showreel-card .showreel-video{
-      height:100%;
-    }    
-    .brand-logo {
-      height: 38px;
-      width: 38px;
-      min-width: 32px;
-      min-height: 32px;
-      object-fit: contain;
-      display: inline-block;
-      margin-right: 10px;
-      border-radius: 8px;
-      background: #18142a;
-      box-shadow: 0 2px 8px rgba(124,92,255,0.10);
-    }
-    /* Effet de brillance accentué sur le header et les h2 */
-    header, header .brand, header nav a {
-      text-shadow: 0 4px 18px rgba(124,92,255,0.38), 0 2px 8px rgba(255,255,255,0.18), 0 1px 0 rgba(255,255,255,0.18);
-    }
-    h2 {
-      text-shadow: 0 6px 28px rgba(124,92,255,0.45), 0 2px 8px rgba(255,255,255,0.18), 0 1px 0 rgba(255,255,255,0.18);
-    }
-    @media (max-width: 1024px){
-      .hero{ grid-template-columns:1fr; }
-      .card{ padding:16px; }
-    }
-    @media (max-width: 900px){
-      .grid{ grid-template-columns:repeat(2, 1fr); }
-      .two{ grid-template-columns:1fr; }
-      header{ gap:10px; }
-      nav a{ margin-left:10px; }
-    }
-    @media (max-width: 768px){
-      .showreel-video{
-        aspect-ratio:9/16;
-        max-height:60vh;
-      }
-    }
-    @media (max-width: 640px){
-      .wrap{ padding:22px 14px 64px; }
-      .grid{ grid-template-columns:1fr; }
-      nav{ display:none; }
-      .nav-toggle{ display:inline-flex; align-items:center; justify-content:center; }
-      .mobile-nav.open{ display:grid; }
-      .brand-logo { height: 28px; width: 28px; margin-right: 7px; }
-      .footer{ flex-direction:column; align-items:flex-start; }
-    }
-    .section, .hero, .footer {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.7s cubic-bezier(.4,1.6,.4,1), transform 0.7s cubic-bezier(.4,1.6,.4,1);
-    }
-    .section.visible, .hero.visible, .footer.visible {
-      opacity: 1;
-      transform: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="page-arc page-arc-top"></div>
+  <div class="page-arc page-arc-bottom"></div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
   <div class="wrap">
-    <header>
-      <div class="brand" style="display:flex;align-items:center;gap:18px;">
-        <img src="ln-logo.png" alt="Logo LN" class="brand-logo" style="height:60px;width:60px;"> LN Monteur Vidéo
-      </div>
-      <nav style="display:flex;align-items:center;gap:10px;">
-        <a href="#projets">Projets</a>
+    <header class="site-header">
+      <a href="#top" class="brand">
+        <span class="brand-text">
+          <strong>Livai Nugent</strong>
+          <span>montage editorial pour contenus modernes</span>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="#work">Projets</a>
+        <a href="#case-studies">Méthode</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </nav>
+
+      <a class="header-link" href="#contact">Disponible en 2026</a>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Basculer le mode sombre" title="Basculer le mode sombre">
+        <svg class="theme-icon theme-icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+        <svg class="theme-icon theme-icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
       <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span>
         <span></span>
         <span></span>
       </button>
+
       <div id="mobile-nav" class="mobile-nav" role="menu" aria-label="Navigation mobile">
-        <a href="#showreel">Showreel</a>
-        <a href="#projets">Projets</a>
+        <a href="#work">Projets</a>
+        <a href="#case-studies">Méthode</a>
         <a href="#services">Services</a>
         <a href="#contact">Contact</a>
       </div>
     </header>
 
-    <section class="hero">
-      <div class="card">
-        <h1><span class="icon" aria-hidden="true" title="Caméra">
-          <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
-            <path class="camera-glow-path" fill="#FFFFFF" d="M4.5 6.5h8.8c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2H4.5c-1.1 0-2-.9-2-2v-7c0-1.1.9-2 2-2zm11.8 2.1 4.2-2.6c.7-.4 1.5.1 1.5.9v10.2c0 .8-.8 1.3-1.5.9l-4.2-2.6v-6.8z"/>
-          </svg>
-        </span>Monteur vidéo<br/>YouTube & Reels</h1>
-        <p>Montage orienté "Rétention" : hooks rapides, rythme, sound design, titraille et sous-titres dynamiques  Objectif : une vidéo qui se regarde jusqu’au bout.</p>
-        <div class="cta">
-          <a class="btn primary" href="#showreel">Voir le showreel</a>
-          <a class="btn" href="#contact">Me contacter</a>
-        </div>
-        <div class="kpi">
-          <span class="pill">
-            <svg width="18" height="18" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:4px;">
-              <rect width="32" height="32" rx="7" fill="#2A003F"/>
-              <text x="7" y="23" font-size="15" font-family="Arial Black,Arial,sans-serif" fill="#E5AFFF">Pr</text>
-            </svg>
-            Premiere Pro
-          </span>
-          <span class="pill">
-            <svg width="18" height="18" viewBox="0 0 32 32" style="vertical-align:middle;margin-right:4px;">
-              <rect width="32" height="32" rx="7" fill="#00102A"/>
-              <text x="7" y="23" font-size="15" font-family="Arial Black,Arial,sans-serif" fill="#00E1FF">Ae</text>
-            </svg>
-            After Effects
-          </span>
-          <span class="pill">Shorts / Reels</span>
-          <span class="pill">YouTube long format</span>
-        </div>
-      </div>
+    <main id="top">
+      <section class="hero reveal">
+        <div class="coin coin-top" aria-hidden="true"></div>
 
-      <div class="card showreel-card" id="showreel">
-        <!-- Vidéo showreel en boucle -->
-        <video
-          title="Showreel"
-          class="showreel-video"
-          autoplay
-          muted
-          loop
-          controls>
-          <source src="video/v1_ads_medhi-loop10s.mp4" type="video/mp4">
-          Votre navigateur ne supporte pas la lecture vidéo.
-        </video>
-      </div>
-    </section>
-
-    <section class="section" id="projets">
-      <h2>Projets</h2>
-      <div class="grid">
-        <div class="thumb">
-          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
-            <source src="video/v1_ads_medhi-loop10s.mp4" type="video/mp4">
-          </video>
-          <div class="meta">
-            <p class="t">Reels</p>
-            <p class="d">Hook + sous-titres dynamiques + sound design</p>
-          </div>
-        </div>
-        <div class="thumb">
-          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
-            <source src="video/v3__lemillionourien_intro-loop10s.mp4" type="video/mp4">
-          </video>
-          <div class="meta">
-            <p class="t">YouTube</p>
-            <p class="d">Storytelling + rythme + transitions propres</p>
-          </div>
-        </div>
-        <div class="thumb">
-          <video autoplay muted loop style="width:100%; aspect-ratio:16/9; object-fit:cover;">
-            <source src="video/histoire-folle-pokemon-or-et-argent-loop10s.mp4" type="video/mp4">
-          </video>
-          <div class="meta">
-            <p class="t">Shorts</p>
-            <p class="d">B-roll + motion simple + titraille</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <h2>Études de cas</h2>
-      <div class="two">
-        <div class="card">
-          <b>
-            <span class="icon" aria-hidden="true" title="Croissance">
-              <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
-                <path fill="#22C55E" d="M4 18h16v2H2V4h2v14zm3-3 4-4 3 3 5-6 1.5 1.2-6.5 7.8-3-3-3 3-1.5-1z"/>
-              </svg>
-            </span>
-            <span class="word-underline">Objectif</span> :<br/>
-            <span class="word-glow">Rétention</span>
-          </b>
-          <p>
-            Intro trop longue<br/>
-            <span class="tag-action">Hook dès 0:02, cuts plus courts, SFX, sous-titres</span><br/>
-            <span class="tag-resultat">Meilleure dynamique et engagement</span>
+        <div class="hero-inner">
+          <p class="eyebrow">Votre vidéo</p>
+          <h1>
+            <span class="headline-script">un montage pensé pour la</span>
+            <span class="headline-main">RÉTENTION</span>
+          </h1>
+          <p class="hero-copy">
+            Je monte des vidéos YouTube, Reels, Shorts et ads créatives avec une approche fondée sur la clarté, le rythme et la tension visuelle. L'objectif n'est pas seulement de rendre une vidéo belle, mais de la rendre regardable jusqu'au bout.
           </p>
-        </div>
-        <div class="card">
-          <b>
-            <span class="icon" aria-hidden="true" title="Idée">
-              <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
-                <path fill="#F59E0B" d="M9 21h6v-1H9v1zm3-20C7.9 1 5 3.9 5 7c0 2.2 1.1 4.2 3 5.4V15c0 .6.4 1 1 1h6c.6 0 1-.4 1-1v-2.6c1.9-1.2 3-3.2 3-5.4 0-3.1-2.9-6-7-6zm2.7 10.2L14 12v2H10v-2l-.7-.8C8 10.4 7.5 9.2 7.5 8c0-2.5 2.2-4.5 4.5-4.5S16.5 5.5 16.5 8c0 1.2-.5 2.4-1.8 3.2z"/>
-              </svg>
-            </span>
-            <span class="word-underline">Objectif</span> :<br/>
-            <span class="word-glow">Clarté</span>
-          </b>
-          <p>
-            Message confus<br/>
-            <span class="tag-action">Structure en 3 actes, titres écran, b-roll contextualisé</span><br/>
-            <span class="tag-resultat">Compréhension + engagement</span>
-          </p>
-        </div>
-      </div>
-      <div class="card tag-card">
-        <span class="tag-avant">Avant</span>
-        <span class="tag-action">Action</span>
-        <span class="tag-resultat">Résultat</span>
-      </div>
-    </section>
 
-    <section class="section" id="services">
-      <h2>Services</h2>
-      <div class="list">
-        <div class="item">
-          <b>
-            <span class="icon" aria-hidden="true" title="TikTok">
-              <svg width="16" height="16" viewBox="0 0 24 24" role="img" focusable="false">
-                <path fill="#25F4EE" d="M14 3c.4 2.7 2.2 4.7 4.9 4.9v3.1c-1.9-.1-3.6-.7-4.9-1.8v5.6c0 3.4-2.8 6.2-6.2 6.2S1.6 18.3 1.6 14.9c0-3.4 2.8-6.2 6.2-6.2.5 0 1 .1 1.5.2v3.3c-.5-.2-1-.4-1.5-.4-1.6 0-2.9 1.3-2.9 2.9S6.2 17.6 7.8 17.6s2.9-1.3 2.9-2.9V3h3.3z"/>
-                <path fill="#FE2C55" d="M14 3c.3 2.1 1.5 3.7 3.5 4.5v2.8c-1.6-.1-3.1-.6-4.4-1.5v5.6c0 3.2-2.6 5.8-5.8 5.8S1.5 17.6 1.5 14.4c0-3.2 2.6-5.8 5.8-5.8.4 0 .8 0 1.2.1v2.8c-.4-.2-.8-.2-1.2-.2-1.6 0-2.9 1.3-2.9 2.9 0 1.6 1.3 2.9 2.9 2.9 1.6 0 2.9-1.3 2.9-2.9V3h3.8z"/>
-              </svg>
-            </span>
-            Montage Reels / TikTok / Shorts
-          </b>
-          <p>Montage rapide, sous-titres, SFX, rythme et punchlines.</p>
-        </div>
-        <div class="item">
-          <b>
-            <span class="icon" aria-hidden="true" title="YouTube">
-              <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
-                <path fill="#FF0000" d="M23 7.2c-.3-1.1-1.2-2-2.3-2.3C18.9 4.4 12 4.4 12 4.4s-6.9 0-8.7.5C2.2 5.2 1.3 6.1 1 7.2.5 9 .5 12 .5 12s0 3 .5 4.8c.3 1.1 1.2 2 2.3 2.3 1.8.5 8.7.5 8.7.5s6.9 0 8.7-.5c1.1-.3 2-1.2 2.3-2.3.5-1.8.5-4.8.5-4.8s0-3-.5-4.8z"/>
-                <path fill="#fff" d="M10 15.5v-7l6 3.5-6 3.5z"/>
-              </svg>
-            </span>
-            Montage YouTube long format
-          </b>
-          <p>Storytelling, structure, cuts, sound design, habillage.</p>
-        </div>
-        <div class="item">
-  <b>
-    <span class="icon" aria-hidden="true" title="Camera">
-      <svg width="18" height="18" viewBox="0 0 24 24" role="img" focusable="false">
-        <path fill="#FFFFFF" d="M4.5 6.5h8.8c1.1 0 2 .9 2 2v7c0 1.1-.9 2-2 2H4.5c-1.1 0-2-.9-2-2v-7c0-1.1.9-2 2-2zm11.8 2.1 4.2-2.6c.7-.4 1.5.1 1.5.9v10.2c0 .8-.8 1.3-1.5.9l-4.2-2.6v-6.8z"/>
-      </svg>
-    </span>
-    Motion léger
-  </b>
-  <p>Titres animés, pictos, zoom, transitions propres.</p>
-</div>
-      </div>
-    </section>
+          <div class="hero-actions">
+            <a class="btn primary" href="#showreel">Voir le showreel</a>
+            <a class="btn secondary" href="#work">Parcourir les projets</a>
+          </div>
 
-    <section class="section" id="contact">
-      <h2>Contact</h2>
-      <div class="card">
-        <p><b>Email :</b> livainugent@hotmail.fr</p>
-        <p style="margin-top:6px;"><b>Disponibilité :</b> réponse sous 24–48h</p>
-        <div class="cta" style="margin-top:14px;">
-          <a class="btn primary" href="mailto:tonadresse@email.fr">M’écrire</a>
-          <a class="btn" href="#">Instagram</a>
-          <a class="btn" href="#">TikTok</a>
+          <div class="hero-facts">
+            <span>Premiere Pro</span>
+            <span>After Effects</span>
+            <span>Short form</span>
+            <span>Long form</span>
+          </div>
         </div>
-      </div>
-    </section>
 
-    <div class="footer">
-      <span>© <span id="y"></span> <img src="ln-logo.png" alt="Logo LN" class="brand-logo" style="height:22px;width:22px;vertical-align:middle;margin-right:4px;"> Livai Nugent</span>
-      <span>Montage vidéo • France</span>
-    </div>
+        <div class="coin coin-bottom" aria-hidden="true"></div>
+      </section>
+
+      <section class="showcase reveal" id="showreel">
+        <div class="showcase-copy">
+          <p class="section-kicker">Showreel</p>
+          <h2>Un montage net, posé et lisible.</h2>
+          <p>Une direction plus éditoriale, avec une image plus premium que purement gaming ou néon. Le style sert ici à rendre le portfolio plus distinctif et plus actuel.</p>
+        </div>
+        <div class="showcase-media showcase-media-vertical">
+          <video class="showreel-video" autoplay muted loop playsinline controls preload="metadata">
+            <source src="video/v3_reel_lemillionourien.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
+        </div>
+      </section>
+
+      <section class="section reveal" id="work">
+        <div class="section-heading">
+          <p class="section-kicker">Projets sélectionnés</p>
+          <h2>Des projets montés pour vendre une intention, pas seulement un effet.</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal-card">
+            <div class="work-media">
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage publicitaire">
+                <source src="video/v1_ads_medhi-loop10s.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="work-body">
+              <h3>Ads et Reels à hook immédiat</h3>
+              <p>Cuts plus secs, sous-titres lisibles et accents visuels pour capter l'attention dès les premières secondes.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card">
+            <div class="work-media">
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage YouTube long format">
+                <source src="video/v3__lemillionourien_intro-loop10s.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="work-body">
+              <h3>YouTube long format plus éditorial</h3>
+              <p>Structure plus calme, narration plus propre et transitions discrètes pour laisser parler le fond.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card">
+            <div class="work-media">
+              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage format court">
+                <source src="video/histoire-folle-pokemon-or-et-argent-loop10s.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <div class="work-body">
+              <h3>Formats courts plus denses</h3>
+              <p>B-roll, titrage, zooms et respiration contrôlée pour donner plus de valeur à chaque seconde.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="case-studies">
+        <div class="section-heading">
+          <p class="section-kicker">Méthode</p>
+          <h2>Une méthode simple : voir le problème, corriger le rythme, clarifier le résultat.</h2>
+        </div>
+
+        <div class="case-grid">
+          <article class="case-card case-video-card case-video-feature reveal-card">
+            <div class="case-video-media">
+              <video controls preload="metadata" playsinline aria-label="Comparatif avant après">
+                <source src="video/Avant_apresmp4.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas la lecture vidéo.
+              </video>
+            </div>
+            <div class="case-video-body">
+              <span class="case-label">Avant / Après</span>
+              <h3>Comparatif de montage</h3>
+              <p>Une seule vidéo pour comparer la version brute et la version montée, avec un gain plus lisible en rythme, en clarté et en impact.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="services">
+        <div class="section-heading">
+          <p class="section-kicker">Services</p>
+          <h2>Ce que je peux prendre en charge aujourd'hui dans ce style de montage.</h2>
+        </div>
+
+        <div class="services-list">
+          <article class="service-row reveal-card">
+            <div>
+              <h3>Reels / TikTok / Shorts</h3>
+              <p>Montage direct, sous-titres, hooks, sound design et rythme pensé pour le scroll.</p>
+            </div>
+          </article>
+          <article class="service-row reveal-card">
+            <div>
+              <h3>YouTube long format</h3>
+              <p>Storytelling, structure, cuts et habillage discret pour garder la vidéo propre.</p>
+            </div>
+          </article>
+          <article class="service-row reveal-card">
+            <div>
+              <h3>Motion léger</h3>
+              <p>Titres animés, zooms, transitions fines et renfort graphique simple.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="contact-panel reveal" id="contact">
+        <p class="section-kicker">Contact</p>
+        <h2>Si vous voulez un rendu plus distinctif en 2026, on peut partir là-dessus.</h2>
+        <p>Je suis actuellement disponible pour discuter d'un format court, d'une série YouTube ou d'un besoin de montage récurrent.</p>
+        <div class="contact-actions">
+          <a class="btn primary" href="mailto:livainugent@hotmail.fr?subject=Projet%20video%20-%20Portfolio">M'écrire</a>
+          <span>livainugent@hotmail.fr</span>
+        </div>
+      </section>
+    </main>
   </div>
 
   <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-    // Effet flou sur le header au scroll
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 10) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-    // Apparition des sections au scroll
     function revealOnScroll() {
-      document.querySelectorAll('.section, .hero, .footer').forEach(el => {
+      document.querySelectorAll('.reveal, .reveal-card').forEach((el) => {
         const rect = el.getBoundingClientRect();
-        if(rect.top < window.innerHeight - 60) {
+        if (rect.top < window.innerHeight - 70) {
           el.classList.add('visible');
         }
       });
     }
+
     window.addEventListener('scroll', revealOnScroll);
     window.addEventListener('DOMContentLoaded', revealOnScroll);
-    // Menu mobile
+
     const navToggle = document.querySelector('.nav-toggle');
     const mobileNav = document.getElementById('mobile-nav');
     if (navToggle && mobileNav) {
@@ -478,17 +227,39 @@
         const isOpen = mobileNav.classList.toggle('open');
         navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       });
-      mobileNav.querySelectorAll('a').forEach(link => {
+      mobileNav.querySelectorAll('a').forEach((link) => {
         link.addEventListener('click', () => {
           mobileNav.classList.remove('open');
           navToggle.setAttribute('aria-expanded', 'false');
         });
       });
     }
+
+    // Toggle du mode sombre/clair
+    const themeToggle = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    // Fonction pour appliquer le thème
+    function applyTheme(theme) {
+      html.setAttribute('data-theme', theme);
+      localStorage.setItem('theme', theme);
+    }
+
+    // Fonction pour basculer le thème
+    function toggleTheme() {
+      const currentTheme = html.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+      applyTheme(newTheme);
+    }
+
+    // Initialisation du thème
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(savedTheme);
+
+    // Écouteur d'événement pour le bouton toggle
+    if (themeToggle) {
+      themeToggle.addEventListener('click', toggleTheme);
+    }
   </script>
 </body>
 </html>
-
-
-
-
