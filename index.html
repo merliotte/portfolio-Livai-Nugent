@@ -111,9 +111,9 @@
         <div class="work-grid">
           <article class="work-card reveal-card">
             <div class="work-media">
-              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage publicitaire">
-                <source src="video/v1_ads_medhi-loop10s.mp4" type="video/mp4" />
-              </video>
+                <video autoplay muted loop playsinline preload="metadata" controls data-start="0.5" aria-label="Extrait de montage publicitaire">
+                  <source src="video/montage_timeline-loop20s.mp4" type="video/mp4" />
+                </video>
             </div>
             <div class="work-body">
               <h3>Ads et Reels à hook immédiat</h3>
@@ -123,9 +123,9 @@
 
           <article class="work-card reveal-card">
             <div class="work-media">
-              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage YouTube long format">
-                <source src="video/v3__lemillionourien_intro-loop10s.mp4" type="video/mp4" />
-              </video>
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de montage YouTube long format">
+                  <source src="video/v3__lemillionourien_intro-loop10s.mp4" type="video/mp4" />
+                </video>
             </div>
             <div class="work-body">
               <h3>YouTube long format plus éditorial</h3>
@@ -135,9 +135,9 @@
 
           <article class="work-card reveal-card">
             <div class="work-media">
-              <video autoplay muted loop playsinline preload="metadata" aria-label="Extrait de montage format court">
-                <source src="video/histoire-folle-pokemon-or-et-argent-loop10s.mp4" type="video/mp4" />
-              </video>
+                <video autoplay muted loop playsinline preload="metadata" controls data-start="3" aria-label="Extrait de montage format court">
+                  <source src="video/v1_avant_apres-loop45s.mp4" type="video/mp4" />
+                </video>
             </div>
             <div class="work-body">
               <h3>Formats courts plus denses</h3>
@@ -263,6 +263,19 @@
     if (themeToggle) {
       themeToggle.addEventListener('click', toggleTheme);
     }
+
+    document.querySelectorAll('video[data-start]').forEach((video) => {
+      const startTime = Number(video.dataset.start || 0);
+      if (!startTime) return;
+
+      const seekToStart = () => {
+        if (video.duration && video.duration > startTime) {
+          video.currentTime = startTime;
+        }
+      };
+
+      video.addEventListener('loadedmetadata', seekToStart, { once: true });
+    });
   </script>
 </body>
 </html>
