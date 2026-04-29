@@ -96,7 +96,7 @@
         </div>
         <div class="showcase-media showcase-media-vertical">
           <video class="showreel-video" muted loop playsinline controls preload="metadata">
-            <source src="video/v1_avant_apres-loop45s.mp4" type="video/mp4" />
+            <source src="video/v1_equilibre_remyb-loop45s.mp4" type="video/mp4" />
             Votre navigateur ne supporte pas la lecture vidéo.
           </video>
         </div>
@@ -136,7 +136,7 @@
           <article class="work-card reveal-card">
             <div class="work-media">
                 <video autoplay muted loop playsinline preload="metadata" controls data-start="3" aria-label="Extrait de montage format court">
-                  <source src="video/v1_equilibre_remyb-loop45s.mp4" type="video/mp4" />
+                  <source src="video/v1_avant_apres-loop45s.mp4" type="video/mp4" />
                 </video>
             </div>
             <div class="work-body">
@@ -220,7 +220,16 @@
       });
     }
 
+    function pauseActiveVideos() {
+      document.querySelectorAll('video').forEach((video) => {
+        if (!video.paused && !video.ended) {
+          video.pause();
+        }
+      });
+    }
+
     window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('scroll', pauseActiveVideos, { passive: true });
     window.addEventListener('DOMContentLoaded', revealOnScroll);
 
     const navToggle = document.querySelector('.nav-toggle');
