@@ -583,6 +583,37 @@ h2 {
   background: #0f1114;
 }
 
+.work-subtabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.work-subtab {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--muted);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.work-subtab:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.work-subtab.active {
+  background: var(--accent);
+  color: #f6f2ec;
+  border-color: var(--accent);
+}
+
 .work-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -88,6 +88,20 @@
         <div class="coin coin-bottom" aria-hidden="true"></div>
       </section>
 
+      <section class="showcase intro-hook reveal" id="intro-hook">
+        <div class="showcase-copy">
+          <p class="section-kicker">Intro</p>
+          <h2>30 secondes pour voir tout ce que je monte.</h2>
+          <p>Ads, reels et formats longs enchaînés en accéléré : un aperçu rapide des secteurs et styles sur lesquels je travaille avant d'aller voir chaque projet en détail.</p>
+        </div>
+        <div class="showcase-media showcase-media-vertical">
+          <video class="showreel-video" autoplay muted loop playsinline controls preload="metadata">
+            <source src="video/intro_hook_compil.mp4" type="video/mp4" />
+            Votre navigateur ne supporte pas la lecture vidéo.
+          </video>
+        </div>
+      </section>
+
       <section class="showcase reveal" id="showreel">
         <div class="showcase-copy">
           <p class="section-kicker">Showreel</p>
@@ -104,44 +118,264 @@
 
       <section class="section reveal" id="work">
         <div class="section-heading">
-          <p class="section-kicker">Projets sélectionnés</p>
-          <h2>Des projets montés pour vendre une intention, pas seulement un effet.</h2>
+          <p class="section-kicker">Réels</p>
+          <h2>Des formats courts pensés pour le scroll.</h2>
+        </div>
+
+        <div class="work-subtabs" role="tablist" aria-label="Sous-catégories Réels">
+          <button class="work-subtab active" data-sub="all" type="button">Tous</button>
+          <button class="work-subtab" data-sub="coaching" type="button">Coaching</button>
+          <button class="work-subtab" data-sub="restaurants" type="button">Restaurants</button>
+          <button class="work-subtab" data-sub="story-telling" type="button">Story telling</button>
         </div>
 
         <div class="work-grid">
-          <article class="work-card reveal-card">
-            <div class="work-media">
-                <video autoplay muted loop playsinline preload="metadata" controls data-start="0.5" aria-label="Extrait de montage publicitaire">
-                  <source src="video/VOYAGECORPS-loop45s.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="work-body">
-              <h3>Ads et Reels à hook immédiat</h3>
-              <p>Cuts plus secs, sous-titres lisibles et accents visuels pour capter l'attention dès les premières secondes.</p>
-            </div>
-          </article>
-
-          <article class="work-card reveal-card">
-            <div class="work-media">
-                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de montage YouTube long format">
-                  <source src="video/vf_2_chanteuse_studio-loop45s.mp4" type="video/mp4" />
-                </video>
-            </div>
-            <div class="work-body">
-              <h3>YouTube long format plus éditorial</h3>
-              <p>Structure plus calme, narration plus propre et transitions discrètes pour laisser parler le fond.</p>
-            </div>
-          </article>
-
-          <article class="work-card reveal-card">
+          <article class="work-card reveal-card" data-sub="coaching">
             <div class="work-media">
                 <video autoplay muted loop playsinline preload="metadata" controls data-start="3" aria-label="Extrait de montage format court">
                   <source src="video/v1_avant_apres-loop45s.mp4" type="video/mp4" />
                 </video>
             </div>
             <div class="work-body">
-              <h3>Formats courts plus denses</h3>
+              <h3>Coaching : formats courts plus denses</h3>
               <p>B-roll, titrage, zooms et respiration contrôlée pour donner plus de valeur à chaque seconde.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="coaching">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de montage YouTube long format">
+                  <source src="video/vf_2_chanteuse_studio-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Coaching éditorial plus posé</h3>
+              <p>Structure plus calme, narration plus propre et transitions discrètes pour laisser parler le fond.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité restaurant Kobbo">
+                  <source src="video/restaurant_kobbo-loop35s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Kobbo : mise en appétit rapide</h3>
+              <p>Gros plans produit, montage punchy et musique entraînante pour donner envie en quelques secondes.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité O'Greedys">
+                  <source src="video/restaurant_ogreedys_2-loop25s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>O'Greedys : burger en gros plan</h3>
+              <p>Textures et sauces mises en valeur, cuts courts pour garder l'attention jusqu'au call-to-action.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité O'Greedys">
+                  <source src="video/restaurant_ogreedys_1-loop15s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>O'Greedys : format ultra-court</h3>
+              <p>Une promesse, un visuel fort, zéro temps mort : pensé pour le scroll rapide.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité Délice Pizza">
+                  <source src="video/restaurant_delicepizza_2-loop20s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Délice Pizza : four et pâte en valeur</h3>
+              <p>Ambiance chaleureuse, gros plans cuisson et montage rythmé pour donner faim immédiatement.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité Délice Pizza">
+                  <source src="video/restaurant_delicepizza_3-loop20s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Délice Pizza : variante produit</h3>
+              <p>Même identité visuelle, déclinée pour tester un nouvel accroche et un nouveau visuel produit.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="restaurants">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité Délice Pizza">
+                  <source src="video/restaurant_delicepizza_1-loop10s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Délice Pizza : teaser très court</h3>
+              <p>Un format flash pour multiplier les passages en story et en feed.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="story-telling">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de reel tourné en studio">
+                  <source src="video/reel_femmes_sport_auto-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Interview studio : sport auto</h3>
+              <p>Cadrage stable, habillage discret et cuts calés sur la parole pour garder l'interview fluide.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="story-telling">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de reel lifestyle">
+                  <source src="video/reel_couple-loop30s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Reel lifestyle à deux</h3>
+              <p>Montage léger et naturel, pensé pour une audience qui suit déjà la chaîne au quotidien.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="story-telling">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de reel storytelling">
+                  <source src="video/reel_jardin_nedortjamais-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Reel storytelling</h3>
+              <p>Narration suivie, texte de fin et tension maintenue jusqu'à la chute pour fidéliser l'audience.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="ads">
+        <div class="section-heading">
+          <p class="section-kicker">ADS</p>
+          <h2>Des publicités pensées pour convertir.</h2>
+        </div>
+
+        <div class="work-subtabs" role="tablist" aria-label="Sous-catégories ADS">
+          <button class="work-subtab active" data-sub="all" type="button">Tous</button>
+          <button class="work-subtab" data-sub="formation" type="button">Formation</button>
+          <button class="work-subtab" data-sub="entreprise" type="button">Entreprise</button>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal-card" data-sub="formation">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls data-start="0.5" aria-label="Extrait de montage publicitaire">
+                  <source src="video/VOYAGECORPS-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Ads à hook immédiat</h3>
+              <p>Cuts plus secs, sous-titres lisibles et accents visuels pour capter l'attention dès les premières secondes.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="formation">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité business">
+                  <source src="video/ads_alechenry-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Ads business orientée conversion</h3>
+              <p>Argumentaire clair, preuve sociale et call-to-action posé pour une cible professionnelle.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="entreprise">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité de service">
+                  <source src="video/ads_xelios-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Ads de service à message direct</h3>
+              <p>Promesse posée dès les premières secondes, rythme soutenu et structure publicitaire classique mais efficace.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card" data-sub="entreprise">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de publicité courte">
+                  <source src="video/ads_dalavalle-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Ads courte et directe</h3>
+              <p>Un seul message, peu de fioritures, pensé pour convertir vite sur les réseaux.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="vsl">
+        <div class="section-heading">
+          <p class="section-kicker">VSL</p>
+          <h2>Une vidéo de vente pensée pour convaincre.</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal-card">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de VSL coaching mental">
+                  <source src="video/reel_carlmental-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Coach mental : message posé</h3>
+              <p>Ton plus calme, sous-titrage soigné et structure pensée pour la crédibilité plutôt que le clash.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal" id="video-longue">
+        <div class="section-heading">
+          <p class="section-kicker">Vidéo longue</p>
+          <h2>Du format long qui garde le rythme.</h2>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card reveal-card">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de vlog">
+                  <source src="video/vlog_valentin_rennes-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Vlog : journée à Rennes</h3>
+              <p>Suivi caméra à l'épaule, rythme de coupe plus posé et ambiance sonore pour porter le quotidien filmé.</p>
+            </div>
+          </article>
+
+          <article class="work-card reveal-card">
+            <div class="work-media">
+                <video autoplay muted loop playsinline preload="metadata" controls aria-label="Extrait de vlog">
+                  <source src="video/vlog_valentin_paris_roubaix-loop45s.mp4" type="video/mp4" />
+                </video>
+            </div>
+            <div class="work-body">
+              <h3>Vlog : Paris-Roubaix</h3>
+              <p>Format évènementiel, plans variés et montage qui garde le fil de la journée sans perdre le rythme.</p>
             </div>
           </article>
         </div>
@@ -272,6 +506,23 @@
     if (themeToggle) {
       themeToggle.addEventListener('click', toggleTheme);
     }
+
+    document.querySelectorAll('.work-subtabs').forEach((subtabs) => {
+      const section = subtabs.closest('section');
+      const cards = section.querySelectorAll('.work-card');
+      const tabs = subtabs.querySelectorAll('.work-subtab');
+
+      tabs.forEach((tab) => {
+        tab.addEventListener('click', () => {
+          tabs.forEach((t) => t.classList.remove('active'));
+          tab.classList.add('active');
+          const sub = tab.dataset.sub;
+          cards.forEach((card) => {
+            card.style.display = sub === 'all' || card.dataset.sub === sub ? '' : 'none';
+          });
+        });
+      });
+    });
 
     document.querySelectorAll('video[data-start]').forEach((video) => {
       const startTime = Number(video.dataset.start || 0);
