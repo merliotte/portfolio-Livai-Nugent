@@ -1,35 +1,10 @@
-# Portfolio Monteur Vidéo (Site statique)
+# 👋 Hello ! 
 
-Portfolio **one-page** pour monteur vidéo : showreel, projets, services et contact.  
-Objectif : site **rapide**, **clair**, et **orienté conversion**.
+Retrouvez l'ensemble de mes travaux, mes études de cas et mon parcours professionnel sur mon site personnel. 
+N'hésitez pas à me contacter via la section dédiée pour toute collaboration !
 
----
-
-## Contenu
-- Hero + CTA (voir le showreel / contact)
-- Showreel intégré (YouTube/Vimeo)
-- Grille de projets
-- Études de cas (optionnel)
-- Services
-- Contact (email + réseaux)
-
----
-
-## Prérequis
-Aucun framework. Un navigateur suffit.  
-Optionnel pour tester en local : Python **ou** Node.
-
----
-
-## Installation
-1. Télécharge / clone le projet
-2. Vérifie que tu as au minimum :
-   - `index.html` (page principale)
-
----
-
-## Lancer en local
-
-### Option A — Avec Python
-```bash
-python -m http.server 8000
+<p align="left">
+  <a href="https://portofolio-livainugent.netlify.app/" target="_blank">
+    <img src="https://img.shields.io/badge/Explorer_mon_Portfolio-blue?style=for-the-badge&logo=quicktime&logoColor=white" alt="Lien Portfolio">
+  </a>
+</p>
