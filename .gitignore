@@ -20,4 +20,4 @@ video/*
 *.mkv
 # Keep lightweight loop previews
 !video/*-loop*s.mp4
-!video/intro_hook_compil.mp4
+!video/intro_3.mp4
