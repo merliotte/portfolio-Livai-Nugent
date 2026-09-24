@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><title>Newspaper Effect 9:16</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#2b2a27}
+.paper{position:absolute;inset:0;background:#e9e5dc;color:#1b1a18;font-family:"Liberation Serif","Times New Roman",serif;padding:150px 60px 0}
+/* grain du papier */
+.grain{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.55}
+.fibers{position:absolute;inset:0;pointer-events:none;mix-blend-mode:multiply;opacity:.35}
+.vignette{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 45%,rgba(0,0,0,0) 55%,rgba(60,45,20,.28) 100%)}
+.fold{position:absolute;top:0;bottom:0;left:50%;width:120px;transform:translateX(-50%);pointer-events:none;
+  background:linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,.07) 48%,rgba(255,255,255,.25) 52%,rgba(0,0,0,0))}
+.ink{filter:url(#ink)}
+.mast{text-align:center;font-family:"Liberation Serif",serif;font-weight:700;font-size:122px;letter-spacing:3px;line-height:1;transform:scaleY(1.05)}
+.rule{border-top:4px solid #1b1a18;border-bottom:1.5px solid #1b1a18;height:9px;margin:14px 0 6px}
+.dateline{display:flex;justify-content:space-between;font-size:19px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700;padding:0 4px}
+.rule2{border-top:1.5px solid #1b1a18;border-bottom:4px solid #1b1a18;height:9px;margin:6px 0 26px}
+.headline{position:relative;display:table;margin:0 auto;transform:rotate(-.6deg);white-space:nowrap}
+.headline span{position:relative;font-family:"Liberation Sans",Arial,sans-serif;font-weight:700;font-size:142px;letter-spacing:0;line-height:.98;z-index:1;display:block;text-align:center}
+.hl{position:absolute;left:-22px;right:-22px;top:26px;bottom:4px;z-index:0}
+.h2{transform:rotate(.5deg);margin-top:8px}
+.cols{display:block;margin-top:34px}
+.photo{height:640px;position:relative;overflow:hidden;border:2px solid #1b1a18}
+.photo svg{width:100%;height:100%;display:block}
+.caption{font-style:italic;font-size:19px;margin-top:8px}
+.text{font-size:24px;line-height:1.3;text-align:justify;hyphens:auto;column-count:2;column-gap:34px;column-rule:1.5px solid #1b1a18;margin-top:26px}
+.text h3{column-span:all;font-family:"Liberation Sans",sans-serif;font-size:30px;text-transform:uppercase;margin-bottom:8px;letter-spacing:.5px;text-align:left}
+.text p::first-letter{}
+.drop{float:left;font-size:78px;line-height:.85;margin:6px 8px 0 0;font-weight:700}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute">
+ <defs>
+  <filter id="ink" x="-5%" y="-5%" width="110%" height="110%">
+   <feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="3" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"/>
+   <feGaussianBlur stdDeviation=".35"/>
+  </filter>
+  <filter id="marker">
+   <feTurbulence type="fractalNoise" baseFrequency=".02 .5" numOctaves="3" seed="8" result="n"/>
+   <feDisplacementMap in="SourceGraphic" in2="n" scale="16"/>
+  </filter>
+  <filter id="halftone" color-interpolation-filters="sRGB">
+   <feColorMatrix type="saturate" values="0.6"/>
+   <feComponentTransfer><feFuncR type="gamma" exponent="1.15"/><feFuncG type="gamma" exponent="1.15"/><feFuncB type="gamma" exponent="1.1"/></feComponentTransfer>
+  </filter>
+  <pattern id="dots" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+   <circle cx="3" cy="3" r="1.4" fill="#000" opacity=".22"/>
+  </pattern>
+ </defs>
+</svg>
+
+<div class="paper">
+ <div class="ink">
+  <div class="mast">LIVAI NUGENT</div>
+  <div class="rule"></div>
+  <div class="dateline"><span>Vol. I — N° 01</span><span>Le Journal du Montage</span><span>1 Euro</span></div>
+  <div class="rule2"></div>
+
+  <div class="headline"><svg class="hl" viewBox="0 0 100 10" preserveAspectRatio="none"><rect x="0" y="0" width="100" height="10" fill="#f3e233" filter="url(#marker)" opacity=".92"/></svg><span>NEWSPAPER</span></div>
+  <div class="headline h2"><svg class="hl" viewBox="0 0 100 10" preserveAspectRatio="none"><rect x="0" y="0" width="100" height="10" fill="#f3e233" filter="url(#marker)" opacity=".92"/></svg><span>EFFECT</span></div>
+
+  <div class="cols">
+   <div>
+    <div class="photo">
+     <svg viewBox="0 0 1000 470" preserveAspectRatio="xMidYMid slice">
+      <defs>
+       <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#47607f"/><stop offset=".7" stop-color="#9fb0bf"/><stop offset="1" stop-color="#c9ccc8"/></linearGradient>
+       <linearGradient id="stone" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#b58e62"/><stop offset=".55" stop-color="#d9b88a"/><stop offset="1" stop-color="#8d6a45"/></linearGradient>
+       <filter id="clouds"><feTurbulence type="fractalNoise" baseFrequency=".006 .014" numOctaves="4" seed="11"/><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1.6 -.75"/></filter>
+       <filter id="rough"><feTurbulence type="fractalNoise" baseFrequency=".08" numOctaves="3" seed="5" result="n"/><feColorMatrix in="n" type="matrix" values="0 0 0 0 .2  0 0 0 0 .15  0 0 0 0 .1  0 0 0 .9 -.25" result="d"/><feComposite in="d" in2="SourceGraphic" operator="in" result="dd"/><feMerge><feMergeNode in="SourceGraphic"/><feMergeNode in="dd"/></feMerge></filter>
+      </defs>
+      <g filter="url(#halftone)">
+       <rect width="1000" height="470" fill="url(#sky)"/>
+       <rect width="1000" height="470" filter="url(#clouds)"/>
+       <!-- Colisée stylisé -->
+       <g id="coli" filter="url(#rough)">
+        <path d="M-20 470 L-20 175 Q 420 70 1040 150 L1040 470 Z" fill="url(#stone)"/>
+        <path d="M-20 175 Q 420 70 1040 150 L1040 168 Q 420 92 -20 196 Z" fill="#6e5236"/>
+        <path d="M-20 262 Q 420 175 1040 245 L1040 258 Q 420 190 -20 277 Z" fill="#6e5236"/>
+        <path d="M-20 352 Q 420 278 1040 338 L1040 352 Q 420 293 -20 367 Z" fill="#6e5236"/>
+       </g>
+       <g id="arches"></g>
+      </g>
+      <rect width="1000" height="470" fill="url(#dots)"/>
+     </svg>
+    </div>
+    <div class="caption">Ci-dessus : chaque image devient une page imprimée — texture, encre et grain.</div>
+   </div>
+   <div class="text">
+    <h3>Le montage passe à l'imprimerie</h3>
+    <p><span class="drop">L</span>orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultricies mi eget mauris pharetra et ultrices neque ornare aenean. Scelerisque eleifend donec pretium vulputate sapien nec sagittis aliquam. Massa id neque aliquam vestibulum morbi blandit. Egestas sed tempus urna et pharetra pharetra massa. Justo nec ultrices dui sapien eget mi proin sed libero. Commodo quis imperdiet massa tincidunt nunc pulvinar sapien et ligula. Risus feugiat in ante metus dictum at tempor commodo ullamcorper. Tellus in hac habitasse platea dictumst vestibulum rhoncus est pellentesque.</p><p style="margin-top:12px">Sed viverra tellus in hac habitasse platea dictumst. Nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit. Amet cursus sit amet dictum sit amet justo donec enim. Faucibus a pellentesque sit amet porttitor eget dolor morbi.</p>
+   </div>
+  </div>
+ </div>
+
+ <svg class="grain" width="1080" height="1920"><filter id="g"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" seed="2"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 .9"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(#g)" fill="#fff"/></svg>
+ <svg class="fibers" width="1080" height="1920"><filter id="f"><feTurbulence type="fractalNoise" baseFrequency=".004 .03" numOctaves="5" seed="9"/><feColorMatrix values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .42  0 0 0 1.4 -.55"/></filter><rect width="100%" height="100%" filter="url(#f)"/></svg>
+ <div class="fold"></div>
+ <div class="vignette"></div>
+</div>
+
+<script>
+// arcades du Colisée : chaque rangée suit la courbe des bandeaux de pierre
+const g=document.getElementById('arches');const NS='http://www.w3.org/2000/svg';
+// y d'une courbe quadratique (x0=-20, cx=420, x1=1040) au point x
+const qy=(x,y0,cy,y1)=>{let lo=0,hi=1;for(let i=0;i<30;i++){const t=(lo+hi)/2;const xx=(1-t)*(1-t)*-20+2*(1-t)*t*420+t*t*1040;xx<x?lo=t:hi=t}const t=lo;return (1-t)*(1-t)*y0+2*(1-t)*t*cy+t*t*y1};
+const rows=[[[196,92,168],[262,175,245],62],[[277,190,258],[352,278,338],70],[[367,293,352],[500,500,500],80]];
+rows.forEach(([top,bot,w],lvl)=>{
+  for(let x=-10;x<1040;x+=w){
+    const cx=x+w/2, yt=qy(cx,...top)+12, yb=Math.min(qy(cx,...bot)-4,470);
+    const aw=w*0.56, ax=cx-aw/2;
+    const p=document.createElementNS(NS,'path');
+    p.setAttribute('d',`M${ax} ${yb} L${ax} ${yt+aw/2} A${aw/2} ${aw/2} 0 0 1 ${ax+aw} ${yt+aw/2} L${ax+aw} ${yb} Z`);
+    p.setAttribute('fill',lvl===0?'#56708f':'#2c2119');p.setAttribute('opacity',lvl===0?.8:.88);
+    g.appendChild(p);
+  }
+});
+</script>
+</body></html>
